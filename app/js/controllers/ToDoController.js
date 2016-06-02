@@ -12,4 +12,15 @@ toDoApp.controller('ToDoController', ['ToDoService', 'ToDoFactory', function(ToD
   self.removeToDo = function() {
     self.todos.pop();
   };
+
+  self.remaining = function() {
+    var count = 0;
+    angular.forEach(self.todos, function(todo) {
+      count += todo.completed ? 0 : 1;
+    });
+
+    return count;
+
+    };
+
 }]);

@@ -35,4 +35,9 @@ describe('ToDoController', function() {
 
     expect(ctrl.todos.length).toEqual(initialCount - 1);
   });
+
+  it('shows remaining todos', function() {
+    var amount = ctrl.remaining();
+    expect(amount).toEqual(1);
+  });
 });

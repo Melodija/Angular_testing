@@ -11,10 +11,11 @@
   </head>
   <body>
     <div id="todos" ng-controller="ToDoController as controller">
+      <span> {{controller.remaining()}} of {{controller.todos.length}} remaining</span>
       <p ng-repeat="todo in controller.todos">
       {{ todo.text  }}: {{ todo.completed ? "completed" : "not
       completed"  }}
-      <span class="complete" ng-click="todo.complete();">Complete</span>
+      <button class="complete" ng-click="todo.complete();">Complete</button>
       </p>
       <input id="new-todo-name" type="text" ng-model="todoText">
       <button id="add-todo" ng-click="controller.addToDo(todoText);">Add a ToDo</button>
